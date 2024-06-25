@@ -1,0 +1,70 @@
+p {
+    letter-spacing: 1px;
+  }
+  
+  h1 {
+    font-size: 2.5rem; /* Adjust to match the desired font size */
+    line-height: 1.2;
+  }
+  
+  button {
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Additional styling */
+  .relative .rounded-full {
+    position: relative;
+  }
+  
+  .relative .bg-white {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(1.5rem) translateY(-1.5rem);
+    padding: 0.5rem;
+    border-radius: 50%;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .relative .bg-gray-200 {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: #e5e7eb;
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 1024px) {
+    h1 {
+      font-size: 2rem; /* Adjust to match the desired font size */
+    }
+  
+    .text-center {
+      text-align: center;
+    }
+  
+    .lg\\:text-left {
+      text-align: center;
+    }
+  
+    .flex-col {
+      flex-direction: column;
+    }
+  
+    .lg\\:w-1\\/2 {
+      width: 100%;
+    }
+  
+    .lg\\:mb-0 {
+      margin-bottom: 0;
+    }
+  
+    .lg\\:justify-start {
+      justify-content: center;
+    }
+  }
+  

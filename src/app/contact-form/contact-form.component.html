@@ -1,0 +1,74 @@
+<div class="container mx-auto p-6">
+    <form (ngSubmit)="onSubmit()">
+      <div class="grid grid-cols-1 gap-6 mb-6 md:grid-cols-2 lg:grid-cols-3">
+        <div>
+          <label for="first_name" class="block mb-2 text-sm font-medium text-gray-700">First Name</label>
+          <input type="text" id="first_name" [(ngModel)]="contact.first_name" name="first_name" class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+        <div>
+          <label for="last_name" class="block mb-2 text-sm font-medium text-gray-700">Last Name</label>
+          <input type="text" id="last_name" [(ngModel)]="contact.last_name" name="last_name" class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+        <div>
+          <label for="emailId" class="block mb-2 text-sm font-medium text-gray-700">Email</label>
+          <input type="email" id="emailId" [(ngModel)]="contact.emailId" name="emailId" class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+        <div>
+          <label for="age" class="block mb-2 text-sm font-medium text-gray-700">Age</label>
+          <input type="number" id="age" [(ngModel)]="contact.age" name="age" class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+        <div>
+          <label for="gender" class="block mb-2 text-sm font-medium text-gray-700">Gender</label>
+          <input type="text" id="gender" [(ngModel)]="contact.gender" name="gender" class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+        <div>
+          <label for="mobilenumber" class="block mb-2 text-sm font-medium text-gray-700">Mobile Number</label>
+          <input type="text" id="mobilenumber" [(ngModel)]="contact.mobilenumber" name="mobilenumber" class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+        <div>
+          <label for="pan_no" class="block mb-2 text-sm font-medium text-gray-700">PAN No</label>
+          <input type="text" id="pan_no" [(ngModel)]="contact.pan_no" name="pan_no" class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+        <div>
+          <label for="adhaar_no" class="block mb-2 text-sm font-medium text-gray-700">Aadhaar No</label>
+          <input type="text" id="adhaar_no" [(ngModel)]="contact.adhaar_no" name="adhaar_no" class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+        <div>
+          <label for="status" class="block mb-2 text-sm font-medium text-gray-700">Status</label>
+          <select id="status" [(ngModel)]="contact.status" name="status" class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option [value]="true">Active</option>
+            <option [value]="false">Inactive</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="w-full md:w-auto px-6 py-2 text-white bg-blue-500 rounded-full hover:bg-blue-700">{{ editMode ? 'Update' : 'Create' }} Contact</button>
+    </form>
+  
+    <h2 class="mt-8 mb-4 text-xl font-semibold text-gray-700">Contacts List</h2>
+    <table class="w-full table-auto">
+      <thead>
+        <tr class="bg-gray-100">
+          <th class="px-4 py-2 text-left text-sm font-medium text-gray-600">First Name</th>
+          <th class="px-4 py-2 text-left text-sm font-medium text-gray-600">Last Name</th>
+          <th class="px-4 py-2 text-left text-sm font-medium text-gray-600">Email</th>
+          <th class="px-4 py-2 text-left text-sm font-medium text-gray-600">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contact of contacts" class="border-b">
+          <td class="px-4 py-2 text-sm text-gray-700">{{ contact.first_name }}</td>
+          <td class="px-4 py-2 text-sm text-gray-700">{{ contact.last_name }}</td>
+          <td class="px-4 py-2 text-sm text-gray-700">{{ contact.emailId }}</td>
+          <td class="px-4 py-2">
+            <button class="px-4 py-2 mr-2 text-white bg-green-500 rounded-full hover:bg-green-700" (click)="getContact(contact.id)">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="px-4 py-2 text-white bg-red-500 rounded-full hover:bg-red-700" (click)="deleteContact(contact.id)">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

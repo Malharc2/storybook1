@@ -1,0 +1,49 @@
+<header class="flex justify-between items-center p-6 bg-white shadow">
+  <div class="text-xl font-bold">Brainwave.io</div>
+  <nav class="hidden md:flex space-x-6">
+    <a routerLink="/" class="text-gray-600 hover:text-gray-900">Demos</a>
+    <a routerLink="#" class="text-gray-600 hover:text-gray-900">Pages</a>
+    <a routerLink="#" class="text-gray-600 hover:text-gray-900">Support</a>
+    <a routerLink="/contact" class="text-gray-600 hover:text-gray-900"
+      >Contact</a
+    >
+  </nav>
+  <button class="hidden md:block bg-blue-600 text-white px-4 py-2 rounded">
+    Get started a project
+  </button>
+  <div class="md:hidden">
+    <button
+      id="menuButton"
+      class="text-gray-600 hover:text-gray-900 focus:outline-none"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16m-7 6h7"
+        ></path>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<nav
+  id="mobileMenu"
+  class="hidden md:hidden flex flex-col space-y-2 p-6 bg-white shadow-lg"
+>
+  <a routerLink="#" class="text-gray-600 hover:text-gray-900">Demos</a>
+  <a routerLink="#" class="text-gray-600 hover:text-gray-900">Pages</a>
+  <a routerLink="#" class="text-gray-600 hover:text-gray-900">Support</a>
+  <a routerLink="/contact" class="text-gray-600 hover:text-gray-900">Contact</a>
+
+  <button class="bg-blue-600 text-white px-4 py-2 rounded">
+    Get started a project
+  </button>
+</nav>
